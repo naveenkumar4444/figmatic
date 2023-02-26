@@ -22,16 +22,16 @@ const CounterButton = ({}) => {
   };
 
   const getBackground = () => {
-    if (name == "None") {
+    if (name === "None") {
       return "lightgray";
     }
-    if (name == "Basic") {
+    if (name === "Basic") {
       return "#91D4A8";
     }
-    if (name == "Advanced") {
+    if (name === "Advanced") {
       return "#E9BE74";
     }
-    if (name == "Complex") {
+    if (name === "Complex") {
       return "#F57F6C";
     }
   };
