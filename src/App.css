@@ -2,20 +2,43 @@
   background: #C3E6CD;
   height: 100vh;
 }
-.table-responsive{
+
+.table-responsive {
   margin: 0 40px;
 }
+
 .table thead {
   border-bottom: 3px solid black !important;
 }
+
 .table tr {
   text-align: left;
   vertical-align: middle !important;
 }
+
 .table thead tr td span:nth-child(1) {
   font-size: 25px;
   font-weight: 700;
 }
-.table thead tr th:nth-last-child(1), .table tbody tr td:nth-last-child(1) {
+
+.table thead tr th:nth-last-child(1),
+.table tbody tr td:nth-last-child(1) {
   text-align: right !important;
+}
+
+/* for mobile */
+@media only screen and (max-width: 480px) {
+  .table-responsive {
+    margin: 0 5px;
+  }
+  .table thead tr th{
+    padding-right: 30px;
+  }
+}
+
+/* for tablet */
+@media only screen and (max-width: 850px) {
+  .table thead tr th{
+    padding-right: 50px;
+  }
 }
