@@ -100,7 +100,7 @@ const Main = () => {
         ]);
       }
     };
-    return () => getData();
+    return getData();
   }, []);
 
   return (
