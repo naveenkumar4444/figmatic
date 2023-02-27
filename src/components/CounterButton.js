@@ -1,25 +1,51 @@
 import React, { useState } from "react";
 
-import '../App.css'
+import "../App.css";
 
-const CounterButton = ({}) => {
+const prices = {
+  None: 0, // none
+  Basic: 100, // basic
+  Advanced: 200, // advanced
+  Complex: 300, // complex
+};
+
+function getKeyByValue(object, value) {
+  // console.log(Object.keys(object).find((key) => object[key] === value));
+  return Object.keys(object).find((key) => object[key] === value);
+}
+
+const CounterButton = ({ data, setData, obj, param }) => {
   const values = ["None", "Basic", "Advanced", "Complex"];
 
-  const [name, setName] = useState(values[0]);
+  const [name, setName] = useState(getKeyByValue(prices, obj[param]));
+
+  // console.log(getKeyByValue(prices, obj[param]));
 
   const handleIncrement = () => {
     let i = values.indexOf(name);
+    const ai = data.findIndex((o) => o.name === obj.name);
     const j = i + 1;
     if (i !== 3) {
       setName(values[j]);
+      let mydata = [...data];
+      mydata[ai][param] = prices[values[j]];
+      // mydata[ai]["mode"] = values[j];
+      setData(mydata);
+      window.localStorage.setItem("figmatic", JSON.stringify(mydata));
     }
   };
 
   const handleDecrement = () => {
     let i = values.indexOf(name);
+    const ai = data.findIndex((o) => o.name === obj.name);
     const j = i - 1;
     if (i !== 0) {
       setName(values[j]);
+      let mydata = [...data];
+      mydata[ai][param] = prices[values[j]];
+      // mydata[ai]["mode"] = values[j];
+      setData(mydata);
+      window.localStorage.setItem("figmatic", JSON.stringify(mydata));
     }
   };
 
@@ -85,7 +111,7 @@ const CounterButton = ({}) => {
             // fontWeight: "bold",
           }}
         >
-          {name}<i class="bi-alarm"></i>
+          {name}
         </span>
         <button
           onClick={handleIncrement}
