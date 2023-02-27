@@ -26,6 +26,12 @@
   text-align: right !important;
 }
 
+.cbtn:hover{
+  background-color: orange !important;  
+  height: 35px;
+  color: white;  
+}
+
 /* for mobile */
 @media only screen and (max-width: 480px) {
   .table-responsive {

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import '../App.css'
+
 const CounterButton = ({}) => {
   const values = ["None", "Basic", "Advanced", "Complex"];
 
@@ -58,7 +60,7 @@ const CounterButton = ({}) => {
             borderBottomLeftRadius: "20px",
             padding: "0 10px",
           }}
-          className="bg-white"
+          className="cbtn bg-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +85,7 @@ const CounterButton = ({}) => {
             // fontWeight: "bold",
           }}
         >
-          {name}
+          {name}<i class="bi-alarm"></i>
         </span>
         <button
           onClick={handleIncrement}
@@ -93,7 +95,7 @@ const CounterButton = ({}) => {
             borderBottomRightRadius: "20px",
             padding: "0 10px",
           }}
-          className="bg-white"
+          className="cbtn bg-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
